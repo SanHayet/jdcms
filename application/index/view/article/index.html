@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{$article['title']}</title>
+    <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <script src="/dist/lib/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/static/js/script.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body id="web-top"  style="background-image:url(/image/new1.jpg);">
+<!--导航栏-->
+<nav class="navbar navbar-default" style="border-radius: 0px; background:#C3EBDE;">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#zero-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">江东村</a>
+            </div>
+            <div class="collapse navbar-collapse" id="zero-navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    {$article['belong']==1 ? "<li style='background:#65BB7F'>" : "<li>"}
+                    <a href="/info">信息动态</a>
+                    </li>
+                    {$article['belong']==2 ? "<li style='background:#65BB7F'>" : "<li>"}
+                    <a href="/cwgk">村务公开</a>
+                    </li>
+                    {$article['belong']==3 ? "<li style='background:#65BB7F'>" : "<li>"}
+                    <a href="/xncjs">新农村建设</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" style="margin-right:50px;">
+            		<li>
+                        <a href="/login" class="btn btn-info btn-sm" style="background:#C3EBDE; border:hidden; font-size:14px">
+          					<span class="glyphicon glyphicon-user"></span>管理员登录
+        				</a>
+                    </li>
+          		</ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container" style="background:url(/image/bg1.png); background-repeat:no-repeat; background-size:cover; padding:30px 50px 10px 50px;">
+    <div class="row pre-scrollable" style="height:0px; padding-bottom:60%">
+        <div class="col-md-8 col-sm-8">
+            <!--相关推荐-->
+            {include file="../application/index/view/module/article.html" /}
+            <!--相关推荐-->
+            {include file="../application/index/view/module/commend.html" /}
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs">
+            <!--文章排行-->
+            {include file="../application/index/view/module/ranking.html" /}
+        </div>
+    </div>
+</div>
+<footer class="footer navbar-fixed-bottom"  style="background:#E8E8E8; height:120px; opacity:0.5">
+    <div class="container"  style="padding-top:15px; padding-bottom:15px;">
+    <div class="row">
+
+            <div class="col-md-6 col-sm-6" style="line-height:15px;padding-bottom:-50px;padding-top:15px;">
+                <ul class="list-unstyled">
+                    <li>
+                    	<p>地址:杭州市萧山区大江东区河庄街道江东村 邮编:311200 电话:</p>
+                    </li>
+                    <li>
+                    	<p>浙ICP备00000000号</p>
+                    </li>
+                    <li>
+                    	<p>CopyRight©2017</p>
+                    </li>
+                </ul>
+            </div>      
+            <div class="col-md-1 col-sm-1" style="border-right:1px solid #949494; padding-bottom:50px;padding-top:20px;margin-top:10px;"></div>
+            <div class="col-md-1 col-sm-1"></div>
+            <div class="col-md-4 col-sm-4">
+			<button class="btn btn-lg" data-toggle="modal" data-target="#myModal" style="margin-top:20px; background:none">关于我们&nbsp&nbsp请点击这里查看二维码</button>
+            </div>
+	</div>
+    </div>
+</footer>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:600px; height:600px;">
+        <div class="modal-content">
+        	<div class="modal-body"><img src="/image/123.png"></div>
+        	<div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">关闭</button></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
